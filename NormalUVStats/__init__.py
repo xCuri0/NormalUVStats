@@ -3,7 +3,7 @@ bl_info = {
     "author" : "Curi0",
     "description" : "Show Normal & UV statistics",
     "blender" : (3, 6, 0),
-    'version': (0, 2),
+    'version': (0, 2, 1),
     "location" : "Overlays",
     "warning" : "",
     "category" : "View3D",
@@ -343,6 +343,8 @@ class NormalUVsHandler:
             blf.draw(font_id, "UVs             %s / %s" % (str_uv_count, str_t_uv_count))
         else:
             blf.draw(font_id, "UVs             %s" % (str_t_uv_count))
+
+        blf.disable(font_id, blf.SHADOW)
 
     def remove_handles(self):
         self.q.put(None)
